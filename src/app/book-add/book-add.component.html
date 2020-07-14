@@ -1,0 +1,42 @@
+<div class="container">
+  <hr>
+  <h4 class="text-center">Add new book</h4>
+  <div *ngIf="let message" style="color: red">
+    {{message}}
+  </div>
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>
+        Title
+        <br>
+        <input type="text" formControlName="title">
+      </label>
+    </div>
+    <div *ngIf="bookForm.get('title').invalid && bookForm.get('title').touched" style="color: red">
+      Title is required and min length is 10
+    </div>
+    <div>
+      <label>
+        Author
+        <br>
+        <textarea formControlName="author" cols="30" rows="5"></textarea>
+      </label>
+    </div>
+    <div *ngIf="bookForm.get('author').invalid && bookForm.get('author').touched" style="color: red">
+      Author is required and min length is 10
+    </div>
+    <div>
+      <label>
+        Description
+        <br>
+        <textarea formControlName="description" cols="30" rows="10"></textarea>
+      </label>
+    </div>
+    <div *ngIf="bookForm.get('description').invalid && bookForm.get('description').touched" style="color: red">
+      Description is required and min length is 10
+    </div>
+    <button class="btn btn-outline-secondary" type="submit">SAVE</button> |
+    <a routerLink="/book" class="btn btn-dark">EXIT</a>
+  </form>
+
+</div>
