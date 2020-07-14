@@ -1,9 +1,7 @@
 <div class="container">
   <hr>
   <h4 class="text-center">Add new book</h4>
-  <div *ngIf="let message" style="color: red">
-    {{message}}
-  </div>
+    <h5 style="color: green" class="text-center">{{message}}</h5>
   <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
     <div>
       <label>

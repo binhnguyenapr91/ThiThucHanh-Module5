@@ -1,23 +1,17 @@
 <div class="container">
   <hr>
   <div *ngIf="book">
+
+    </div>
     <h4 class="text-center">Book detail</h4>
     <hr>
-    <label>Book Title:</label>
-    <br>
-    <h6>
-      {{book.title}}
-    </h6>
-    <label>Book Author:</label>
-    <br>
-    <p>
-      {{book.author}}
-    </p>
-    <label>Book Description:</label>
-    <br>
-    <p>
-      {{book.description}}
-    </p>
+  <div class="card">
+    <div class="card-header"><h5><small>Title: </small>{{book.title}}</h5></div>
+    <div class="card-title"><small>Author: </small>{{book.author}}</div>
+    <div class="card-body">
+
+      <div class="card-text">{{book.description}}</div>
+    </div>
     <a routerLink="/book" class="btn btn-dark">Back to listing</a>
   </div>
 </div>
